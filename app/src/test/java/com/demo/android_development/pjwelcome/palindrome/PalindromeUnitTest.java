@@ -20,21 +20,27 @@ import static org.junit.Assert.assertTrue;
 @SmallTest
 public class PalindromeUnitTest {
 
-    String textValueEmpty;
-    String palindromeText;
-    ViewModel model;
+    private String textValueEmpty;
+    private String palindromeText;
+    private String notPalindromeText;
+    private ViewModel model;
 
     @Before
     public void setUp() {
         textValueEmpty = Constants.EMPTY_STRING;
         palindromeText = "racecar";
+        notPalindromeText = "hello";
         model = new ViewModel(palindromeText);
     }
 
     @Test
     public void isPalindrome() {
         assertTrue(Helper.isPalindrome(palindromeText));
-        assertFalse(Helper.isPalindrome(palindromeText));
+    }
+
+    @Test
+    public void isNotPalindrome() {
+        assertFalse(Helper.isPalindrome(notPalindromeText));
     }
 
     @Test

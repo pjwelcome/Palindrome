@@ -13,11 +13,12 @@ import com.demo.android_development.pjwelcome.palindrome.Model.ViewModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    AppCompatTextView displayTextView;
-    AppCompatEditText inputBox;
-    RelativeLayout parentView;
-    ViewModel model;
-    boolean appStarting = false;
+    private AppCompatTextView displayTextView;
+    private AppCompatEditText inputBox;
+    private RelativeLayout parentView;
+    private ViewModel model;
+    private boolean appStarting = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
         receivePalindrome();
         appStarting = true;
     }
-    private void initViewModel(){
+
+    private void initViewModel() {
         model = new ViewModel(inputBox.getText().toString());
     }
 
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         displayTextView.setText(inputBox.getText());
         displayTextView.setText(mPrefs.getString(getString(R.string.palindrome_String), Constants.EMPTY_STRING));
         model.setInputText(mPrefs.getString(getString(R.string.palindrome_String), Constants.EMPTY_STRING));
-        model.setViewsBackgroundColor();
+        setBackgroundColor(model.setViewsBackgroundColor());
     }
 
     @Override
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(!appStarting)
+        if (!appStarting)
             checkTextView();
     }
 
