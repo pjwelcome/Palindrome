@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Palindrome</string>
+    <string name="hint_text_string">Please Enter Text Here</string>
+    <string name="palindrome_String">PalindromeText</string>
+</resources>
