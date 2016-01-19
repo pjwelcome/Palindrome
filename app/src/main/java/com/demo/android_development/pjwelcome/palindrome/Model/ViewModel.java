@@ -9,14 +9,6 @@ import com.demo.android_development.pjwelcome.palindrome.Helpers.Helper;
  */
 public class ViewModel {
 
-    public String getInputText() {
-        return inputText;
-    }
-
-    public void setInputText(String inputText) {
-        this.inputText = inputText;
-    }
-
     private String inputText;
 
     public ViewModel() {
@@ -27,7 +19,15 @@ public class ViewModel {
         this.inputText = inputText;
     }
 
-    public Helper.Colors setViewsBackgroundColor() {
+    public String getInputText() {
+        return inputText;
+    }
+
+    public void setInputText(String inputText) {
+        this.inputText = inputText;
+    }
+
+    public Helper.Colors getViewsBackgroundColor() {
         if (inputText.isEmpty()) {
             return Helper.Colors.RED;
         } else if (Helper.isPalindrome(inputText)) {

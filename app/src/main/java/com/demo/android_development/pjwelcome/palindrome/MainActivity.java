@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         displayTextView.setText(inputBox.getText());
         displayTextView.setText(mPrefs.getString(getString(R.string.palindrome_String), Constants.EMPTY_STRING));
         model.setInputText(mPrefs.getString(getString(R.string.palindrome_String), Constants.EMPTY_STRING));
-        setBackgroundColor(model.setViewsBackgroundColor());
+        setBackgroundColor(model.getViewsBackgroundColor());
     }
 
     @Override
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkTextView() {
         model.setInputText(inputBox.getText().toString());
-        setBackgroundColor(model.setViewsBackgroundColor());
+        setBackgroundColor(model.getViewsBackgroundColor());
         displayTextView.setText(model.getInputText());
     }
 
